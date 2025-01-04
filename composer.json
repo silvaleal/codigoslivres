@@ -1,0 +1,19 @@
+{
+    "name": "rodolfo/codigoslivres",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/",
+            "components\\": "components/"
+        },
+        "files": [
+            "router/router.php",
+            "app/database/database.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "José Rodolfo"
+        }
+    ],
+    "require": {}
+}

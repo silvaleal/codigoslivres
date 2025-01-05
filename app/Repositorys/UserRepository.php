@@ -4,11 +4,11 @@ namespace app\Repositorys;
 
 use app\database\Connection;
 
-class UserReposity {
-    private PDO $connect;
+class UserRepository {
+    private \PDO $connect;
 
-    public function __construct() {
-        $this->connect = new Connection();
+    public function __construct(\PDO $connect) {
+        $this->connect = $connect;
     }
 
     public function create($nickname, $email, $password) {

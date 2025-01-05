@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'b91cd993a612c15c0e572e3deb7615b7' => $baseDir . '/router/router.php',
-    '779160d500379426169ac41b00366a70' => $baseDir . '/app/database/database.php',
+    'a6c441fd467e5d495cc5cc1f84dd8a31' => $baseDir . '/app/database/autoloader.php',
+    'ff855914a4677fc8e6ef9cb2abbca468' => $baseDir . '/app/database/connection.php',
 );

@@ -1,20 +1,29 @@
 <?php
-namespace app\database;
+namespace app\Database;
 
 class Connection {
-    private \PDO $conn;
+    private \PDO $connect;
 
     public function __construct() {
         try {
-            $this->conn = new \PDO("mysql:host=".DBHOST.";dbname=".DBDATABASE, DBUSER, DBPASSWORD);
-            $this->conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            $this->connect = new \PDO("mysql:host=".DBHOST.";dbname=".DBDATABASE, DBUSER, DBPASSWORD);
+            $this->connect->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         } catch(\PDOException $exception) {
-            echo "Erro de conexão: " . $exception->getMessage();
-            $this->conn = null;
+            include "app/views/errors/erroDatabase.php";
+            die();
+        }
+    }
+
+    public function loadQueries() {
+        $querys = require "querys.php";
+        echo "<h1>Preparando MySql...</h1>";
+        foreach ($querys as $query) {
+            $this->connect->exec($query);
         }
     }
 
     public function getConnection() {
-        return $this->conn;
+        $this->loadQueries();
+        return $this->connect;
     }
 }

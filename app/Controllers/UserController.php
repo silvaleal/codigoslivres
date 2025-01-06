@@ -5,12 +5,28 @@ namespace app\Controllers;
 use app\Repositorys\UserRepository;
 
 class UserController {
-    
-    function index() {
-        return "UserController index";
+    private \PDO $connect;
+
+    public function __construct(\PDO $connect) {
+        $this->connect = $connect;
     }
-    function show($params) {
-        $user = (new UserRepository())->getAll();
-        return $user;
+
+    public function show($params) {
+        $userepository = (new UserRepository($this->connect));
+        $user = $userepository->getByField('nickname', $params['user']);
+        
+        if (!$user) {
+            include "app/views/unknownUser.php";
+            return;
+        }
+
+        $repos = $userepository->getRepositorys($user['user_id']);
+        include "app/views/user.php";
     }
+
+    public function login() {
+        echo "e";
+        die();
+    } 
+
 }

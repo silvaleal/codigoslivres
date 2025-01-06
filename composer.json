@@ -7,8 +7,7 @@
         },
         "files": [
             "router/router.php",
-            "app/database/autoloader.php",
-            "app/database/connection.php"
+            "app/Database/connection.php"
         ]
     },
     "authors": [

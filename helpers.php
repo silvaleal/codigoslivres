@@ -9,6 +9,7 @@ require "vendor/autoload.php";
 #############################################
 define('PROJECT_NAME', 'CodigosLivres');
 define('CONTROLLER_PATH', "app\\Controllers\\");
+define('GITHUB_REPO', 'https://github.com/silvaleal/codigoslivres');
 
 #############################################
 #                                           #

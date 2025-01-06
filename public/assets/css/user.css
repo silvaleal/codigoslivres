@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(243, 243, 243) !important;
+}
+
+.profile {
+    margin-top: 6em;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 10px;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.profile-left img{
+    width: 100px;
+    border-radius: 20px;
+}
+
+.repositorys {
+    padding: 0.5em;
+}
+
+.repositorys-title {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    justify-content: space-between;
+}
+
+.repositorys-list {
+    display: flex;
+    gap: 1em; /* Espaçamento entre os itens */
+    flex-wrap: wrap; /* Para quebrar os itens quando a tela for pequena */
+    padding: 1em; /* Espaçamento interno */
+}
+
+.card {
+    width: 20rem;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-items {
+    display: flex;
+    align-items: start;
+    gap: 0.1em;
+}

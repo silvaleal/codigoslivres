@@ -1,45 +1,21 @@
 <?php include 'head.php'; ?>
 
-<!-- Favicons -->
-<link href="../../assets/imgss/favicon.png" rel="icon">
-<link href="../../assets/imgs/apple-touch-icon.png" rel="apple-touch-icon">
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-<!-- Vendor CSS Files -->
-<link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-<link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
-<link href="../../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-<!-- Main CSS File -->
-<link href="../../assets/css/home.css" rel="stylesheet">
-
 <body class="index-page">
   <?php include "layouts/navbar.php"; ?>
 
   <main class="main">
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-      <img src="../../assets/imgs/hero-bg-2.jpg" alt="" class="hero-bg">
       <div class="container">
-        <div class="row gy-4 justify-content-between">
-          <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
-            <img src="../../assets/imgs/hero-img.png" class="img-fluid animated" alt="">
-          </div>
-
-          <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
-            <h1>A plataforma para seu projeto <span>open-source</span></h1>
+        <div class="row gy-4 justify-content-center align-items-center" style="margin-top: 1em">
+          <div class="col-lg-8 d-flex flex-column justify-content-center text-center" data-aos="fade-in">
+            <h1>A plataforma para seu projeto <span>open-source!</span></h1>
             <p>Somos uma iniciativa dedicada a impulsionar a comunidade de código aberto. Nossa missão é oferecer suporte, promover a colaboração e ajudar você a transformar suas ideias em realidade.</p>
-            <div class="d-flex">
-              <a href="#about" class="btn-get-started">Seja um membro</a>
+            <div class="d-flex justify-content-center" style="gap: 1em">
+              <a href="/login" class="btn-get-started">Seja um membro</a>
+              <a href="<?= GITHUB_REPO ?>" target="_blank" style="display: flex; align-items: center;">Visite nosso repositório!</a>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -65,17 +41,8 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row align-items-xl-center gy-5">
-
-          <div class="col-xl-5 content">
-            <h3>Sobre nós</h3>
-            <h2>Nascemos para ajudar os programadores</h2>
-            <p>Nossa plataforma ajuda programadores a colaborar, aprender e crescer juntos. Valorizamos o compartilhamento de conhecimento e o trabalho em equipe, acreditando que o código aberto é a chave para construir um futuro melhor.</p>
-            <a href="#" class="read-more"><span>Veja os maiores contribuidores</span><i class="bi bi-arrow-right"></i></a>
-          </div>
-
-          <div class="col-xl-7">
+          <div class="col-xl-12">
             <div class="row gy-4 icon-boxes">
-
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon-box">
                   <i class="bi bi-buildings"></i>
@@ -110,7 +77,6 @@
 
             </div>
           </div>
-
         </div>
       </div>
 
@@ -134,7 +100,7 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="bi bi-journal-richtext"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="1521" data-purecounter-duration="1" class="purecounter"></span>
               <p>Projetos</p>
             </div>
           </div><!-- End Stats Item -->
@@ -162,80 +128,53 @@
     </section><!-- /Stats Section -->
 
 
-    <!-- Faq Section -->
+    <!-- Seção FAQ -->
     <section id="faq" class="faq section light-background">
 
       <div class="container-fluid">
-
         <div class="row gy-4">
-
           <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
-
             <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
-              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+              <h3><span>Perguntas </span><strong>Frequentes</strong></h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                Encontre respostas para as perguntas mais comuns sobre o CodigoLivre, ajudando você a entender melhor como nossa plataforma pode conectar desenvolvedores de todo o mundo.
               </p>
             </div>
-
             <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
-
               <div class="faq-item faq-active">
                 <i class="faq-icon bi bi-question-circle"></i>
-                <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+                <h3>Como posso criar uma conta?</h3>
                 <div class="faq-content">
-                  <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
+                  <p>Para criar uma conta, clique no botão "Criar conta" no canto superior direito da página inicial e preencha o formulário de inscrição com seus dados básicos. Após isso, você estará pronto para entrar em nossa comunidade.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
+              </div><!-- Fim do item FAQ-->
               <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-                <h3>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h3>
+                <h3>Posso sofrer algum tipo de punição?</h3>
                 <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                  <p>Sim, monitoramos nossa plataforma diariamente para garantir o cumprimento das diretrizes. Qualquer violação das regras pode resultar em advertências, suspensões ou até banimento da conta, dependendo da gravidade da infração. Nosso objetivo é manter um ambiente seguro e colaborativo para todos os usuários.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <i class="faq-icon bi bi-question-circle"></i>
-                <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
-                <div class="faq-content">
-                  <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
+              </div><!-- Fim do item FAQ-->
             </div>
-
           </div>
-
           <div class="col-lg-5 order-1 order-lg-2">
-            <img src="../../assets/imgs/faq.jpg" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
+            <img src="../../assets/imgs/faq.svg" class="img-fluid" alt="Imagem FAQ" data-aos="zoom-in" data-aos-delay="100">
           </div>
         </div>
-
       </div>
+    </section><!-- /Seção FAQ -->
 
-    </section><!-- /Faq Section -->
   </main>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
   <!-- Vendor JS Files -->
-  <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../../assets/vendor/php-email-form/validate.js"></script>
   <script src="../../assets/vendor/aos/aos.js"></script>
   <script src="../../assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="../../assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="../../assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
   <script src="../../assets/js/main.js"></script>
 
 </body>

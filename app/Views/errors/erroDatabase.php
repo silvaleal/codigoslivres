@@ -1,0 +1,1 @@
+<h2>Não foi possível realizar conexão com banco de dados</h2>

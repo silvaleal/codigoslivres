@@ -1,9 +1,56 @@
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
 
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+.nologin li{
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.nologin a {
+  color: #10058c !important;
+}
+
+.nologin a:hover {
+  color: #5647ff !important;
+}
+
+.nologin{
+  color: #10058c;
+}
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
 .header {
-    --background-color: rgba(255, 255, 255, 0);
+    --background-color: #10058c;
     --default-color: #ffffff;
     --heading-color: #ffffff;
     color: var(--default-color);
@@ -12,6 +59,7 @@
     transition: all 0.5s;
     z-index: 997;
   }
+
   
   .header .logo {
     line-height: 1;
@@ -91,19 +139,7 @@
       margin-left: 5px;
       transition: 0.3s;
     }
-  
-    .navmenu>ul>li>a:before {
-      content: "";
-      position: absolute;
-      height: 2px;
-      bottom: -6px;
-      left: 0;
-      background-color: var(--nav-hover-color);
-      visibility: hidden;
-      width: 0px;
-      transition: all 0.3s ease-in-out 0s;
-    }
-  
+    
     .navmenu a:hover:before,
     .navmenu li:hover>a:before,
     .navmenu .active:before {

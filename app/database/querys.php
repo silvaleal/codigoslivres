@@ -3,10 +3,19 @@
 return [
 "CREATE TABLE IF NOT EXISTS users_infos (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
-    nickname VARCHAR(15),
-    email VARCHAR(45) UNIQUE,
-    password VARCHAR(15),
+    name VARCHAR(45) NOT NULL,
+    nickname VARCHAR(15) NOT NULL,
+    email VARCHAR(45) UNIQUE NOT NULL,
+    password VARCHAR(15) NOT NULL,
     create_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     update_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);
-"
+",
+"CREATE TABLE IF NOT EXISTS repositorys (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    author_id INT NOT NULL,
+    title VARCHAR(25) NOT NULL,
+    description TEXT NOT NULL,
+    short_description VARCHAR(100) NOT NULL,
+    url VARCHAR(65) NOT NULL
+);"
 ];

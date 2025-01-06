@@ -2,7 +2,7 @@
 
 namespace app\Repositorys;
 
-use app\database\Connection;
+use app\Database\Connection;
 
 class UserRepository {
     private \PDO $connect;
@@ -25,9 +25,18 @@ class UserRepository {
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function getById($id) {
-        $stmt = $this->connect->prepare("SELECT * FROM users_infos WHERE user_id = :id");
-        $stmt->bindValue(":id", $id);
+    public function getByField($field, $value) {
+        $stmt = $this->connect->prepare("
+            SELECT * FROM users_infos WHERE $field = :value;");
+        $stmt->bindValue(":value", $value);
+        $stmt->execute();
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function getRepositorys($authorID) {
+        $stmt = $this->connect->prepare("
+            SELECT * FROM repositorys WHERE author_id = :id;");
+        $stmt->bindValue(":id", $authorID);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }

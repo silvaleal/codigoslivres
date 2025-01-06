@@ -10,4 +10,6 @@ return array(
     'app\\Controllers\\HomeController' => $baseDir . '/app/Controllers/HomeController.php',
     'app\\Controllers\\RepositoryController' => $baseDir . '/app/Controllers/RepositoryController.php',
     'app\\Controllers\\UserController' => $baseDir . '/app/Controllers/UserController.php',
+    'app\\Repositorys\\UserRepository' => $baseDir . '/app/Repositorys/UserRepository.php',
+    'app\\Services\\UserServices' => $baseDir . '/app/Services/UserServices.php',
 );

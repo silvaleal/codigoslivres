@@ -2,7 +2,10 @@
 
 namespace app\Controllers;
 
+use app\Modals\RepoModals;
+
 class RepositoryController { #crud
+
     function create() {
         return "create";
     }
@@ -16,6 +19,6 @@ class RepositoryController { #crud
     }
 
     function show($params) {
-        return $params;
+        return "AAAAAAAAAAAAA";
     }
 }

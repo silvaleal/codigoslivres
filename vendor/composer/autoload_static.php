@@ -8,14 +8,11 @@ class ComposerStaticInit34e82991c60d8ac92d31a6df1f69cab8
 {
     public static $files = array (
         'b91cd993a612c15c0e572e3deb7615b7' => __DIR__ . '/../..' . '/router/router.php',
+        '8af42fbc93851050af2cb4e073c77456' => __DIR__ . '/../..' . '/app/Helpers/functions.php',
         '9b2a8c8e22e762dcc2ab96d4ae3420bb' => __DIR__ . '/../..' . '/app/Database/connection.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'c' => 
-        array (
-            'components\\' => 11,
-        ),
         'a' => 
         array (
             'app\\' => 4,
@@ -23,10 +20,6 @@ class ComposerStaticInit34e82991c60d8ac92d31a6df1f69cab8
     );
 
     public static $prefixDirsPsr4 = array (
-        'components\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/components',
-        ),
         'app\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -38,7 +31,8 @@ class ComposerStaticInit34e82991c60d8ac92d31a6df1f69cab8
         'app\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Controllers/HomeController.php',
         'app\\Controllers\\RepositoryController' => __DIR__ . '/../..' . '/app/Controllers/RepositoryController.php',
         'app\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Controllers/UserController.php',
-        'app\\Repositorys\\UserRepository' => __DIR__ . '/../..' . '/app/Repositorys/UserRepository.php',
+        'app\\Modals\\RepositoryModals' => __DIR__ . '/../..' . '/app/Modals/RepositoryModals.php',
+        'app\\Modals\\UserModals' => __DIR__ . '/../..' . '/app/Modals/UserModals.php',
         'app\\Services\\UserServices' => __DIR__ . '/../..' . '/app/Services/UserServices.php',
     );
 

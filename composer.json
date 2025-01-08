@@ -2,11 +2,11 @@
     "name": "rodolfo/codigoslivres",
     "autoload": {
         "psr-4": {
-            "app\\": "app/",
-            "components\\": "components/"
+            "app\\": "app/"
         },
         "files": [
             "router/router.php",
+            "app/Helpers/functions.php",
             "app/Database/connection.php"
         ]
     },

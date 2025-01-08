@@ -3,6 +3,7 @@
 return [
     "/" => "Home@index",
     "/diretrizes" => "Home@rules",
+    "/inicio" => "Home@home",
     "/user" => "User@index",
     "/user/login" => "User@login",
     "/user/create" => "User@create",

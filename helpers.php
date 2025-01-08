@@ -29,3 +29,12 @@ define('DBDATABASE', 'codigoslivres');
 function getControllerPath($controller) {
     return CONTROLLER_PATH.$controller."Controller";
 }
+
+#############################################
+#                                           #
+#                   Outros                  #
+#                                           #
+#############################################
+$blacklistNames = ['login', 'create'];  # Para bloquear os usuários 
+                                        # não criarem contas ou repositórios
+                                        # com certos nomes 

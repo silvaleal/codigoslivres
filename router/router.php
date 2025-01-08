@@ -26,11 +26,10 @@ class Router {
     public static function index() {
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $routes = include "routes.php";
-
         $matchUri = self::getExactUri($uri, $routes);
-
+        
         if (empty($matchUri)) {
-            $uri = ltrim($uri, '/');
+            $uri = ltrim(rtrim($uri, '/'), '/');
             $matchUri = self::getDynamicUri($uri, $routes);
             $params = self::getParams($uri, $matchUri);
             return Core::index(array_values($matchUri)[0], $params);

@@ -1,4 +1,4 @@
-<?php include 'head.php'; ?>
+<?php include 'layouts/head.php'; ?>
 <link href="../../assets/css/user.css" rel="stylesheet">
 <body class="container">
     <?php include 'layouts/navbar.php'; ?>
@@ -23,7 +23,9 @@
         <section class="repositorys">
             <div class="repositorys-title">
                 <h2>Repositórios</h2>
-                <li><a href="#" class="btn btn-success"><i class="bi bi-file-earmark-plus-fill"></i></a></li>
+                <?php if (isset($_SESSION['login'])): ?>
+                    <li><a href="#" class="btn btn-success"><i class="bi bi-file-earmark-plus-fill"></i></a></li>
+                <?php endif; ?>
             </div>
             <div class="repositorys-list">
                 <?php foreach ($repos as $repo) : ?>
@@ -35,7 +37,9 @@
                                 </div>
                                 <div class="card-items">
                                     <a href="<?= htmlspecialchars($repo['url']) ?>" class="btn btn-primary" target="_blank"><i class="bi bi-bookmark-fill"></i></a>
-                                    <a href="#" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
+                                    <?php if (isset($_SESSION['login'])): ?>
+                                        <a href="#" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>

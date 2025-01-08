@@ -16,7 +16,6 @@ class Connection {
 
     public function loadQueries() {
         $querys = require "querys.php";
-        echo "<h1>Preparando MySql...</h1>";
         foreach ($querys as $query) {
             $this->connect->exec($query);
         }

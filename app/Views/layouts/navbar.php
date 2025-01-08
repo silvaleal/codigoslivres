@@ -14,8 +14,9 @@
         <?php if (isset($_SESSION['login'])): ?>
           <li class="dropdown"><a href="#"><span><?= $_SESSION['login']['nickname']?></span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
-            <li><a href="#">Dropdown 1</a></li>
-            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <li><a href="/user/<?= $_SESSION['login']['nickname'] ?>"><i class="bi bi-person-circle"></i> Ver perfil</a></li>
+            <li><a href="#"><i class="bi bi-compass"></i> Configurações</a></li>
+            <li class="dropdown"><a href="#"><i class="bi bi-archive"></i> Repositório <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
                 <li><a href="#">Deep Dropdown 1</a></li>
                 <li><a href="#">Deep Dropdown 2</a></li>
@@ -24,17 +25,15 @@
                 <li><a href="#">Deep Dropdown 5</a></li>
               </ul>
             </li>
-            <li><a href="#">Dropdown 2</a></li>
-            <li><a href="#">Dropdown 3</a></li>
-            <li><a href="#">Dropdown 4</a></li>
+            <li><a href="#" style="color: red;"><i class="bi bi-escape"></i> Desconectar</a></li>
           </ul>
         </li>
         <?php else: ?>
           <div class="nologin">
             <li>
-              <a href="/login">Login</a>
+              <a href="/user/login">Login</a>
               \
-              <a href="/login">Criar conta</a>
+              <a href="/user/login">Criar conta</a>
             </li>
           </div>
         <?php endif; ?>

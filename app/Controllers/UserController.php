@@ -34,14 +34,13 @@ class UserController {
 
         if ($_POST) {
             try {
-                $loginSuccess = $this->userservices->login($_POST['username'], $_POST['password']);
+                $loginSuccess = $this->userservices->login($_POST['email'], $_POST['password']);
                 header('Location: /inicio');
                 exit();
             } catch (\Exception $e) {
                 setFlashMsg('login', $e->getMessage());
             }
     
-            
         }
         include  "app/views/user/login.php";
     }
@@ -59,9 +58,7 @@ class UserController {
             } catch (\Exception $e) {
                 setFlashMsg('createUser', $e->getMessage());
             }
-            
         }
-
         include "app/views/user/create.php";
     }
 

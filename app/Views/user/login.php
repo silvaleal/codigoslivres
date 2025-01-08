@@ -19,7 +19,7 @@
         .login-container h2 {
             margin-bottom: 20px;
         }
-        .login-container input[type="text"],
+        .login-container input[type="email"],
         .login-container input[type="password"] {
             width: 100%;
             padding: 10px;
@@ -46,7 +46,7 @@
     <h2>Login</h2>
     <?= getFlashMsg('login') ?>
     <form action="/user/login" method="POST">
-        <input type="text" name="username" placeholder="Nome de usuário" required>
+        <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Senha" required>
         <button type="submit">Entrar</button>
     </form>

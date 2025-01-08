@@ -15,6 +15,10 @@ class HomeController {
     }
 
     function index() {
+        if ($_SESSION['login']) {
+            header('location:/inicio');
+            exit();
+        }
         include "app/views/landingpage.php";
     }
     function rules() {

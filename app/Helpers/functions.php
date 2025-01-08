@@ -4,7 +4,7 @@ function getFlashMsg($flash) {
     if (isset($_SESSION[$flash])) {
         $message = $_SESSION[$flash];
         unset($_SESSION[$flash]);
-        return $flash_msg;
+        return $message;
     }
 }
 

@@ -65,6 +65,8 @@
 </style>
 
 <div class="userCreate">
+    <h2>Registre sua conta!</h2>
+    <?= getFlashMsg('createUser') ?>
     <form action="/user/create" method="post">
         <input type="text" name="name" placeholder="Qual é o seu nome?">
         <input type="text" name="nickname" placeholder="Qual é o seu nome de usuário?">

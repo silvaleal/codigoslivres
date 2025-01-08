@@ -56,13 +56,4 @@ class UserModals {
         return $stmt->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function checkLogin($email, $password) {
-        $stmt = $this->connect->prepare("
-            SELECT * FROM users_infos WHERE email = :email AND password = :password;");
-        $stmt->bindValue(":email", $email);
-        $stmt->bindValue(":password", $password);
-        $stmt->execute();
-        return $stmt->fetch(\PDO::FETCH_ASSOC);
-    }
-
 }

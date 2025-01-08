@@ -12,17 +12,16 @@ class UserServices {
     }
 
     public function login($email, $password) {
-        $user = $this->usermodals->checkLogin($email, $password);
+        $user = $this->usermodals->getByField('email', $email);
 
         if(!$user) {
             throw new \Exception("Usuário não encontrado.");
         }
-
-        if (!$password != $user['password']) {
+        if ($password != $user['password']) {
             throw new \Exception("Senha incorreta.");
         }
+        $_SESSION['login'] = $user;
         return true;
-
     }
 
     public function create($name, $nickname, $email, $email2, $password, $password2) {

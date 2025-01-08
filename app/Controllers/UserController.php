@@ -33,15 +33,15 @@ class UserController {
         }
 
         if ($_POST) {
-    
-            $loginSuccess = $this->userservices->login($_POST['username'], $_POST['password']);
-    
-            if ($loginSuccess) {
+            try {
+                $loginSuccess = $this->userservices->login($_POST['username'], $_POST['password']);
                 header('Location: /inicio');
                 exit();
-            } else {
-                echo "Login falhou! Usuário ou senha incorretos.";
+            } catch (\Exception $e) {
+                setFlashMsg('login', $e->getMessage());
             }
+    
+            
         }
         include  "app/views/user/login.php";
     }
@@ -57,7 +57,7 @@ class UserController {
                 $create = $this->userservices->create(
                     $_POST['name'], $_POST['nickname'], $_POST['email'], $_POST['email2'], $_POST['password'], $_POST['password2']);
             } catch (\Exception $e) {
-                echo $e->getMessage();
+                setFlashMsg('createUser', $e->getMessage());
             }
             
         }

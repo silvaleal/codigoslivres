@@ -1,10 +1,11 @@
 <?php
 
 return [
-"CREATE TABLE IF NOT EXISTS users_infos (
+"CREATE TABLE IF NOT EXISTS users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(45) NOT NULL,
     nickname VARCHAR(15) NOT NULL,
+    points INT DEFAULT 0,
     email VARCHAR(45) UNIQUE NOT NULL,
     password VARCHAR(15) NOT NULL,
     create_at DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -17,5 +18,11 @@ return [
     description TEXT NOT NULL,
     short_description VARCHAR(100) NOT NULL,
     url VARCHAR(65) NOT NULL
+);",
+"CREATE TABLE IF NOT EXISTS comments (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    repository_id INT NOT NULL,
+    user_id INT NOT NULL,
+    comment TEXT NOT NULL
 );"
 ];

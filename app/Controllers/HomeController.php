@@ -15,7 +15,7 @@ class HomeController {
     }
 
     function index() {
-        if ($_SESSION['login']) {
+        if (isset($_SESSION['login'])) {
             header('location:/inicio');
             exit();
         }

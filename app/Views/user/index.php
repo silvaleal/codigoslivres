@@ -1,7 +1,7 @@
-<?php include 'layouts/head.php'; ?>
+<?php include 'app/Views/layouts/head.php'; ?>
 <link href="../../assets/css/user.css" rel="stylesheet">
 <body class="container">
-    <?php include 'layouts/navbar.php'; ?>
+    <?php include 'app/Views/layouts/navbar.php'; ?>
 
     <main>
         <section class="profile">
@@ -24,23 +24,21 @@
             <div class="repositorys-title">
                 <h2>Repositórios</h2>
                 <?php if (isset($_SESSION['login'])): ?>
-                    <li><a href="#" class="btn btn-success"><i class="bi bi-file-earmark-plus-fill"></i></a></li>
+                    <li><a href="/repository/create" class="btn btn-success"><i class="bi bi-file-earmark-plus-fill"></i></a></li>
                 <?php endif; ?>
             </div>
             <div class="repositorys-list">
                 <?php foreach ($repos as $repo) : ?>
-                    <div class="">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="">
-                                    <h5 class="card-title"><?= htmlspecialchars($repo['title']) ?></h5>
-                                </div>
-                                <div class="card-items">
-                                    <a href="<?= htmlspecialchars($repo['url']) ?>" class="btn btn-primary" target="_blank"><i class="bi bi-bookmark-fill"></i></a>
-                                    <?php if (isset($_SESSION['login'])): ?>
-                                        <a href="#" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
-                                    <?php endif; ?>
-                                </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                <h5 class="card-title"><?= htmlspecialchars($repo['title']) ?></h5>
+                            </div>
+                            <div class="card-items">
+                                <a href="/repository/<?=$repo['id'] ?>" class="btn btn-primary"><i class="bi bi-bookmark-fill"></i></a>
+                                <?php if (isset($_SESSION['login'])): ?>
+                                    <a href="#" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>

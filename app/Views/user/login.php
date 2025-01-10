@@ -42,7 +42,10 @@
         }
     </style>
 
+<?php require "app/Views/layouts/head.php" ?>
+<?php require "app/Views/layouts/navbar.php" ?>
 <div class="login-container">
+
     <h2>Login</h2>
     <?= getFlashMsg('login') ?>
     <form action="/user/login" method="POST">

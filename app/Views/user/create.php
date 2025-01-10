@@ -17,6 +17,7 @@
     width: 100%;
     max-width: 400px;
     text-align: center;
+    margin-top: 3em;
 }
 
 .userCreate form {
@@ -64,6 +65,8 @@
 
 </style>
 
+<?php require "app/Views/layouts/head.php" ?>
+<?php require "app/Views/layouts/navbar.php" ?>
 <div class="userCreate">
     <h2>Registre sua conta!</h2>
     <?= getFlashMsg('createUser') ?>
@@ -71,7 +74,7 @@
         <input type="text" name="name" placeholder="Qual é o seu nome?">
         <input type="text" name="nickname" placeholder="Qual é o seu nome de usuário?">
         <input type="email" name="email" placeholder="Qual será o email da conta?">
-        <input type="email" name="email2" placeholder="Repita sua senha">
+        <input type="email" name="email2" placeholder="Repita seu email">
         <input type="password" name="password" placeholder="Qual será a sua senha?">
         <input type="password" name="password2" placeholder="Repita sua senha">
         <button type="submit">Confirmar</button>

@@ -29,6 +29,15 @@ class Core {
                             $dependencies[] = new UserModals((new Connection())->getConnection());
                             break;
 
+                        // * DEV NOTE * Infelizmente não encontrei outra maneira para fazer isso
+                        // * DEV NOTE * então, terei que usar esta forma para instanciar o UserServices 
+                        // * DEV NOTE * no controller dos users
+
+                        // * DEV NOTE * Caso você, leitor, tenha sugestões de como melhorar agradeceria.
+                        case 'app\Services\UserServices': 
+                            $dependencies[] = new UserServices(new UserModals((new Connection())->getConnection()));
+                            break;
+
                         case 'app\Modals\RepositoryModals':
                             $dependencies[] = new RepositoryModals((new Connection())->getConnection());
                             break;

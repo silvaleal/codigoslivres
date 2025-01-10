@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(243, 243, 243) !important;
+}
+
+main {
+    margin-top: 7em;
+    background-color: white;
+}
+
+.title {
+    padding: 20px;
+}
+
+.text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.description {
+    padding: 20px;
+}

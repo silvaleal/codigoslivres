@@ -7,10 +7,6 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="/#hero" class="active">Início</a></li>
-        <li><a href="/#about">Sobre</a></li>
-        <li><a href="/#faq">Perguntas frequentes</a></li>
-
         <?php if (isset($_SESSION['login'])): ?>
           <li class="dropdown"><a href="#"><span><?= $_SESSION['login']['nickname']?></span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
@@ -28,13 +24,13 @@
             <li><a href="#" style="color: red;"><i class="bi bi-escape"></i> Desconectar</a></li>
           </ul>
         </li>
+        
         <?php else: ?>
+          <li><a href="/#hero" class="active">Início</a></li>
+          <li><a href="/#about">Sobre</a></li>
+          <li><a href="/#faq">Perguntas frequentes</a></li>
           <div class="nologin">
-            <li>
-              <a href="/user/login">Login</a>
-              \
-              <a href="/user/login">Criar conta</a>
-            </li>
+            <li><a href="/user/login">Login</a>\<a href="/user/create">Criar conta</a></li>
           </div>
         <?php endif; ?>
       </ul>

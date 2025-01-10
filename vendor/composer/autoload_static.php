@@ -8,18 +8,23 @@ class ComposerStaticInit34e82991c60d8ac92d31a6df1f69cab8
 {
     public static $files = array (
         'b91cd993a612c15c0e572e3deb7615b7' => __DIR__ . '/../..' . '/router/router.php',
-        '8af42fbc93851050af2cb4e073c77456' => __DIR__ . '/../..' . '/app/Helpers/functions.php',
+        'a4d765f9bbad8ce0cb5caa7016aa8ed2' => __DIR__ . '/../..' . '/app/Helpers/Utils.php',
         '9b2a8c8e22e762dcc2ab96d4ae3420bb' => __DIR__ . '/../..' . '/app/Database/connection.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'a' => 
         array (
+            'assets\\' => 7,
             'app\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'assets\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/assets',
+        ),
         'app\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',

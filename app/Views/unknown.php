@@ -6,7 +6,7 @@
   
   <div class="card">
     <img src="../../assets/imgs/faq.svg" class="img" alt="Imagem FAQ">
-    <h2>Usuário não encontrado</h2>
+    <h2>Algo foi encontrado</h2>
     <p>Parece que você está explorando novos horizontes, mas infelizmente não achou um tesouro dessa vez...</a></p>
   </div>
     

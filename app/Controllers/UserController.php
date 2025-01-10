@@ -9,21 +9,23 @@ class UserController {
     private UserModals $usermodals;
     private UserServices $userservices;
 
-    public function __construct(UserModals $usermodals) {
+    public function __construct(UserModals $usermodals, UserServices $userservices) {
         $this->usermodals = $usermodals;
-        $this->userservices = new UserServices($this->usermodals);
+        $this->userservices = $userservices;
     }
 
     public function show($params) {
         $user = $this->usermodals->getByField('nickname', $params['user']);
-        
+        $page = FILTER_INPUT(INPUT_GET, "page", FILTER_SANITIZE_SPECIAL_CHARS);
+        if (!$page) {$page = 1;} // Sistema para as páginas dos repositórios
+
         if (!$user) {
             include "app/views/unknownUser.php";
             die();
         }
 
         $repos = $this->usermodals->getRepositorys($user['user_id']);
-        include "app/views/user.php";
+        include "app/views/user/index.php";
     }
 
     public function login() {

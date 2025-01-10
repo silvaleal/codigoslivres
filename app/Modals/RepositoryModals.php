@@ -11,25 +11,15 @@ class RepositoryModals {
         $this->connect = $connect;
     }
 
-    public function create($nickname, $email, $password) {
-        $stmt = $this->connect->prepare("INSERT INTO users_infos (nickname, email, password) VALUES (:nickname, :email, :password)");
-        $stmt->bindValue(":nickname", $nickname);
-        $stmt->bindValue(":email", $email);
-        $stmt->bindValue(":password", $password);
-        $stmt->execute();
-    }
-
-    public function update($id, $field, $value) {
-        $stmt = $this->connect->prepare("UPDATE repositorys SET :field = :value WHERE id = :id");
-        $stmt->bindValue(":id", $id);
-        $stmt->bindValue(":field", $field);
-        $stmt->bindValue(":value", $value);
-        $stmt->execute();
-    }
-
-    public function delete($id) {
-        $stmt = $this->connect->prepare("DELETE FROM repositorys WHERE id = :id");
-        $stmt->bindValue(":id", $id);
+    public function create($author_id, $title, $description, $shortDescription, $url) {
+        $stmt = $this->connect->prepare("
+            INSERT INTO repositorys (author_id, title, description, short_description, url) 
+            VALUES (:author_id, :title, :description, :shortDescription, :url)");
+        $stmt->bindValue(":author_id", $author_id);
+        $stmt->bindValue(":title", $title);
+        $stmt->bindValue(":description", $description);
+        $stmt->bindValue(":shortDescription", $shortDescription);
+        $stmt->bindValue(":url", $url);
         $stmt->execute();
     }
 
@@ -39,10 +29,25 @@ class RepositoryModals {
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function getLimitRepositorys($limit) {
+        $stmt = $this->connect->prepare("SELECT * FROM repositorys LIMIT :limit");
+        $stmt->bindValue(":limit", $limit, \PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     public function getByField($field, $value) {
         $stmt = $this->connect->prepare("
             SELECT * FROM repositorys WHERE $field = :value;");
         $stmt->bindValue(":value", $value);
+        $stmt->execute();
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function getLastByUser($user_id) {
+        $stmt = $this->connect->prepare("
+            SELECT * FROM repositorys WHERE author_id = :user_id ORDER BY id DESC LIMIT 1;");
+        $stmt->bindValue(":user_id", $user_id);
         $stmt->execute();
         return $stmt->fetch(\PDO::FETCH_ASSOC);
     }

@@ -37,7 +37,7 @@
                             <div class="card-items">
                                 <a href="/repository/<?=$repo['id'] ?>" class="btn btn-primary"><i class="bi bi-bookmark-fill"></i></a>
                                 <?php if (isset($_SESSION['login'])): ?>
-                                    <a href="#" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
+                                    <a href="/repository/<?=$repo['id'] ?>/delete" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
                                 <?php endif; ?>
                             </div>
                         </div>

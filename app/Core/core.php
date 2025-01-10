@@ -18,6 +18,7 @@ class Core {
             $constructor = $reflection->getConstructor();
             $dependencies = [];
 
+
             if ($constructor) {
                 foreach ($constructor->getParameters() as $value) {
                     switch ($value->getType()->getName()) {

@@ -8,7 +8,6 @@
             <div class="text">
                 <h2><?= $repo['title'] ?></h2>
                 <div class="buttons">
-                    <a href="">Deixar comentário</a>
                     <a href="<?= htmlspecialchars($repo['url']) ?>" class="btn btn-primary" target="_blank"><i class="bi bi-bookmark-fill"></i></a>
                 </div>
             </div>

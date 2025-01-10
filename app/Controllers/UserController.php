@@ -16,8 +16,6 @@ class UserController {
 
     public function show($params) {
         $user = $this->usermodals->getByField('nickname', $params['user']);
-        $page = FILTER_INPUT(INPUT_GET, "page", FILTER_SANITIZE_SPECIAL_CHARS);
-        if (!$page) {$page = 1;} // Sistema para as páginas dos repositórios
 
         if (!$user) {
             include "app/views/unknownUser.php";

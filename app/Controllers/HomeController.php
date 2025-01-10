@@ -22,7 +22,7 @@ class HomeController {
         include "app/views/landingpage.php";
     }
     function rules() {
-        return "Regras";
+        include "app/views/rules.php";
     }
 
     function home() {

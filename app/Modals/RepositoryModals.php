@@ -23,6 +23,12 @@ class RepositoryModals {
         $stmt->execute();
     }
 
+    public function delete($repo_id) {
+        $stmt = $this->connect->prepare("DELETE FROM repositorys WHERE id = :id");
+        $stmt->bindValue(":id", $repo_id);
+        $stmt->execute();
+    }
+
     public function getAll() {
         $stmt = $this->connect->prepare("SELECT * FROM repositorys");
         $stmt->execute();

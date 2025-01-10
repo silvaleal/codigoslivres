@@ -41,4 +41,26 @@ class RepositoryController { #crud
         
         include "app/Views/repositorys/index.php";
     }
+
+    function delete($params) {
+        $repo = $this->repository->getByField('id', intval($params['repository']));
+
+        if (!isset($_SESSION['login'])) {
+            header('location:/user/login');
+            exit();
+        }
+
+        if ($repo['author_id'] != $_SESSION['login']['user_id']) {
+            header("location:/repository/".$repo['id']);
+            exit();
+        }
+
+        if ($_POST) {
+            $this->repository->delete($repo['id']);
+            header('location:/');
+            exit();
+        }
+
+        include "app/Views/repositorys/delete.php";
+    }
 }
